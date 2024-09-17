@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<div class="h-screen flex flex-col overflow-hidden">
+
+    <!-- Main content -->
+    <div class="flex-1 flex overflow-hidden">
+        <!-- Fixed sidebar -->
+        <div class="w-64 bg-dark-10">
+            <div class="p-5 flex flex-col justify-between text-white">
+                <div>
+                    <a href="/"
+                        class="flex text-3xl font-semibold gap-2 text-yellow-10 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="size-10"><path stroke="none"
+                                d="M0 0h24v24H0z" fill="none" /><path
+                                d="M22 9l-10 -4l-10 4l10 4l10 -4v6" /><path
+                                d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" /></svg>
+                        <p>Tiimi</p>
+                    </a>
+                    <ul
+                        class="mt-5 cursor-pointer flex flex-col gap-1 text-sm text-[#FEFEFE]">
+                        <li
+                            class="py-2 pl-4 flex rounded-lg items-center hover:bg-yellow-10 hover:text-dark-10 group gap-2 transition-all duration-500 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor" class="
+                size-5 text-[#7E8BA4]
+                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                    stroke="none" d="M0 0h24v24H0z"
+                                    fill="none" /><path
+                                    d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" /></svg>
+                            Dashboard
+                        </li>
+                        <li
+                            class="py-2 pl-4 flex rounded-lg items-center hover:bg-yellow-10 hover:text-dark-10 group gap-2 transition-all duration-500 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor"
+                                class="size-5 text-[#7E8BA4]
+                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                    stroke="none" d="M0 0h24v24H0z"
+                                    fill="none" /><path
+                                    d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path
+                                    d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
+                            Inbox
+                        </li>
+                        <li
+                            class="py-2 pl-4 flex rounded-lg items-center hover:bg-yellow-10 hover:text-dark-10 group gap-2 transition-all duration-500 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="size-5 text-[#7E8BA4]
+                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                    stroke="none" d="M0 0h24v24H0z"
+                                    fill="none" /><path
+                                    d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                    d="M16 3v4" /><path d="M8 3v4" /><path
+                                    d="M4 11h16" /><path d="M8 14v4" /><path
+                                    d="M12 14v4" /><path d="M16 14v4" /></svg>
+                            Calendar & Todo
+                        </li>
+                    </ul>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Scroll wrapper -->
+        <div class="flex-1 flex flex-col bg-grey-10">
+            <div class="bg-white">
+                <div class="p-5">
+
+                </div>
+            </div>
+            <!-- Scrollable container -->
+            <div class="px-6 py-4 flex-1 overflow-y-auto">
+                <!-- Your content -->
+                <div v-if="long"
+                    class="p-8 shadow text-center rounded-lg my-10 bg-white"
+                    v-for="i in 20">
+                    {{longMsg}}
+                </div>
+                <div v-if="!long"
+                    class="p-8 shadow text-center rounded-lg my-10 bg-white"
+                    v-for="i in 2">
+                    {{shortMsg}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
