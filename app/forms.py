@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from .models import Institution
 
 
-class ArticleForm(ModelForm):
+class InstitutionForm(ModelForm):
     class Meta:
         model = Institution
         fields = [
