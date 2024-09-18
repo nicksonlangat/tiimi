@@ -1,0 +1,120 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home - Onboarding{% endblock %}
+
+{% block content %}
+<main class="flex h-screen font-base">
+    <div
+        class="bg-grey-10 h-full flex flex-col items-center justify-center w-1/2">
+        <div class="flex items-center justify-center flex-col">
+            <p class="text-dark-10 text-4xl font-bold">Try Tiimi For 14 Days</p>
+            <p class="text-dark-20 mt-2 text-center">Get ahead of other learning
+                institutions with our carefully <br> tailored modules to make
+                daily running of your institution a walk in the park!</p>
+        </div>
+        <div class="mt-10 w-full max-w-xl">
+            <img class src="{% static 'icons/class.svg' %}" alt>
+        </div>
+    </div>
+    <div
+        class="bg-white h-full w-1/2 flex flex-col items-center justify-center">
+        <div>
+            <div
+                class="flex text-4xl font-bold gap-2 text-yellow-10 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    class="size-12"><path stroke="none"
+                        d="M0 0h24v24H0z" fill="none" /><path
+                        d="M22 9l-10 -4l-10 4l10 4l10 -4v6" /><path
+                        d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" /></svg>
+                <p class="text-dark-30">Tiimi</p>
+            </div>
+        </div>
+        <div>
+            <p class="text-[#4b4f4f] text-2xl mt-2">Let's Set Up Your School's
+                Domain</p>
+        </div>
+        <form method="post" action="" class="mt-10 w-full flex flex-col gap-5 max-w-md">
+           {% csrf_token %}
+            <div class="flex w-full flex-col gap-1 text-sm">
+                <label for class="text-green-10 font-semibold">Institution
+                    Name</label>
+                <input
+                    id="name" name="name"
+                    value="{{ form.name.value|default_if_none:'' }}"
+                    type="text" placeholder="Enter school's name"
+                    class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+            </div>
+
+            <div class="flex w-full flex-col gap-1 text-sm">
+                <label for class="text-green-10 font-semibold">School
+                    Email</label>
+                <input
+                    id="email" name="email"
+                    value="{{ form.email.value|default_if_none:'' }}"
+                    type="email" placeholder="Enter school's email"
+                    class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+            </div>
+
+            <div class="flex w-full flex-col gap-1 text-sm">
+                <label for class="text-green-10 font-semibold">School Phone
+                    Number</label>
+                <input
+                    id="phone_number" name="phone_number"
+                    value="{{ form.phone_number.value|default_if_none:'' }}"
+                    type="text" placeholder="Enter school's phone number"
+                    class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+            </div>
+
+            <div class="flex w-full flex-col gap-1 text-sm">
+                <label for class="text-green-10 font-semibold">County</label>
+                <select name="county" id="id_county"
+                    class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+                    {% for key, value in form.fields.county.choices %}
+                    <option value="{{ key }}"
+                    {% if form.fields.county.value == key %} selected{% endif %}>{{ value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+                <div class="flex w-full flex-col gap-1 text-sm">
+                    <label for
+                        class="text-green-10 font-semibold">Sub-County</label>
+                        <select name="sub_county" id="id_sub_county"
+                        class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+                        {% for key, value in form.fields.sub_county.choices %}
+                        <option value="{{ key }}" {% if form.fields.sub_county.value == key %} selected{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                <div class="flex w-full flex-col gap-1 text-sm">
+                    <label for class="text-green-10 font-semibold">Ward</label>
+                    <select name="ward" id="id_ward"
+                    class="py-2 pl-4 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+                    {% for key, value in form.fields.ward.choices %}
+                    <option value="{{ key }}" {% if form.fields.ward.value == key %} selected{% endif %}>{{ value }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+            </div>
+
+            <div>
+                <input type="submit"
+                value="Proceed"
+                    class="bg-yellow-10 cursor-pointer text-green-10 font-semibold transition-all duration-500 ease-in-out py-2 rounded-lg w-full bg-opacity-80 hover:bg-opacity-100">Proceed</input>
+            </div>
+            <div class="text-sm">
+                <p class="text-dark-20">By proceeding, you agree to our <a
+                        href="#" class="text-green-50 font-semibold">Terms</a>
+                    and <a href="#" class="text-green-50 font-semibold">Privacy
+                        Policy</a></p>
+            </div>
+
+        </form>
+    </div>
+</main>
+{% endblock %}
