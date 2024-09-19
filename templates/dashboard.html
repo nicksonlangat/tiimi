@@ -64,6 +64,21 @@
                                     d="M12 14v4" /><path d="M16 14v4" /></svg>
                             Calendar & Todo
                         </li>
+                        <li
+                            class="py-2 pl-4 flex rounded-lg items-center hover:bg-yellow-10 hover:text-dark-10 group gap-2 transition-all duration-500 ease-in-out">
+
+
+                                    <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                                    class="size-5 text-[#7E8BA4]
+                                    transition-all duration-500 ease-in-out group-hover:text-dark-10"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                            Teachers
+                        </li>
+                        <li
+                        class="py-2 pl-4 flex rounded-lg items-center hover:bg-yellow-10 hover:text-dark-10 group gap-2 transition-all duration-500 ease-in-out">
+                        <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="size-5 text-[#7E8BA4]
+                        transition-all duration-500 ease-in-out group-hover:text-dark-10"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" /><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" /></svg>
+                                       Students
+                    </li>
                     </ul>
                 </div>
                 <div>
@@ -74,23 +89,506 @@
         <!-- Scroll wrapper -->
         <div class="flex-1 flex flex-col bg-grey-10">
             <div class="bg-white">
-                <div class="p-5">
-
+                <div class="p-5 flex items-center justify-between">
+                    <p class="text-dark-10 text-2xl font-semibold">Dashboard</p>
+                    <div class="flex gap-5 items-center cursor-pointer">
+                        <span class="bg-grey-10 size-10 text-dark-20 rounded-full flex items-center justify-center">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                        </span>
+                        <span class="bg-green-50 size-10 text-yellow-10 rounded-full flex items-center justify-center">
+                            NL
+                        </span>
+                    </div>
                 </div>
             </div>
             <!-- Scrollable container -->
             <div class="px-6 py-4 flex-1 overflow-y-auto">
                 <!-- Your content -->
-                <div v-if="long"
-                    class="p-8 shadow text-center rounded-lg my-10 bg-white"
-                    v-for="i in 20">
-                    {{longMsg}}
+                <div class="flex gap-2">
+                    <div class="w-2/3  bg-white rounded-lg">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center">
+                                <div class="flex gap-5 text-sm items-center">
+                                    <p class="text-green-10 text-xl font-semibold">Timetable</p>
+                                    <div class="flex flex-col gap-1 text-sm">
+
+                                        <select name="county" id="id_county"
+                                            class="py-2 pl-4 text-dark-20 cursor-pointer text-sm rounded-lg border-grey-100 focus:outline-none focus:ring-1 focus:ring-green-50 focus:border-green-50 placeholder:text-dark-40 border bg-grey-10">
+                                           <option value="" >Form 4 G</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <p class="text-green-50 cursor-pointer font-semibold text-sm">View Afternoon</p>
+                            </div>
+                            <hr class="mt-5 border-gray-100">
+                            <div class="mt-5 grid grid-cols-6 gap-2">
+                                <div>
+                                    <p class="text-green-10 font-semibold uppercase pl-2">Day</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-green-10 font-semibold text-sm">
+                                        <div>
+                                            <p class="p-2">Monday</p>
+                                        </div>
+                                       <div>
+                                        <p class="p-2">Tuesday</p>
+                                       </div>
+                                       <div>
+                                        <p class="p-2">Wednesday</p>
+                                       </div>
+                                        <div>
+                                            <p class="p-2">Thursday</p>
+                                        </div>
+                                       <div>
+                                        <p class="p-2">Friday</p>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="text-green-10 font-semibold">8:00 - 8:45 AM</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-sm">
+                                       <div class="bg-[#C69057] text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-teal-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-orange-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-sky-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-pink-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="text-green-10 font-semibold"> 8:45 - 9:30 AM</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-sm">
+                                       <div class="bg-[#C69057] text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-teal-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-orange-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-sky-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-pink-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-green-10 font-semibold">10:00 - 10:45</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-sm">
+                                       <div class="bg-[#C69057] text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-teal-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-orange-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-sky-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-pink-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-green-10 font-semibold"> 10:45 - 11:30</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-sm">
+                                       <div class="bg-[#C69057] text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-teal-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-orange-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-sky-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-pink-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-green-10 font-semibold">12:00 - 12:45</p>
+                                    <div class="flex mt-5 flex-col gap-2 text-sm">
+                                       <div class="bg-[#C69057] text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-teal-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-orange-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-sky-400 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                       <div class="bg-pink-500 text-white rounded-md">
+                                        <div class="p-2 pl-4">
+                                            <p>English & Lit</p>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/3  bg-white rounded-lg">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center">
+                                <p class="text-green-10 text-xl font-semibold">Events</p>
+                                <div>
+                                    <button class="bg-green-50 flex gap-2 items-center text-white text-sm py-1 rounded-md px-3">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor"  class="size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4.929 4.929a10 10 0 1 1 14.141 14.141a10 10 0 0 1 -14.14 -14.14zm8.071 4.071a1 1 0 1 0 -2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0 -2h-2v-2z" /></svg>
+                                        New Event</button>
+                                </div>
+                            </div>
+                            <hr class="mt-5 border-gray-100">
+                            <div class="mt-5 flex flex-col gap-2">
+                                <div class="bg-grey-10 rounded-lg">
+                                    <div class="p-3  text-sm">
+                                        <div class="flex justify-between">
+
+
+                                                    <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="size-4
+                            transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                stroke="none" d="M0 0h24v24H0z"
+                                                fill="none" /><path
+                                                d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                d="M16 3v4" /><path d="M8 3v4" /><path
+                                                d="M4 11h16" /><path d="M8 14v4" /><path
+                                                d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                        Tuesday, Sept 24, 2024</p>
+
+                                                        <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="size-4
+                                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                    stroke="none" d="M0 0h24v24H0z"
+                                                    fill="none" /><path
+                                                    d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                    d="M16 3v4" /><path d="M8 3v4" /><path
+                                                    d="M4 11h16" /><path d="M8 14v4" /><path
+                                                    d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                            10:00 - 4:00 PM</p>
+
+
+                                        </div>
+                                        <p class="text-green-10 mt-2 font-semibold text-lg">Form 3 Parents' Visiting Day</p>
+                                    </div>
+                                </div>
+                                <div class="bg-grey-10 rounded-lg">
+                                    <div class="p-3  text-sm">
+                                        <div class="flex justify-between">
+
+
+                                                    <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="size-4
+                                                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                stroke="none" d="M0 0h24v24H0z"
+                                                fill="none" /><path
+                                                d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                d="M16 3v4" /><path d="M8 3v4" /><path
+                                                d="M4 11h16" /><path d="M8 14v4" /><path
+                                                d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                        Tuesday, Sept 24, 2024</p>
+
+                                                        <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="size-4
+                                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                    stroke="none" d="M0 0h24v24H0z"
+                                                    fill="none" /><path
+                                                    d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                    d="M16 3v4" /><path d="M8 3v4" /><path
+                                                    d="M4 11h16" /><path d="M8 14v4" /><path
+                                                    d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                            10:00 - 4:00 PM</p>
+
+
+                                        </div>
+                                        <p class="text-green-10 mt-2 font-semibold text-lg">Form 3 Parents' Visiting Day</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-grey-10 rounded-lg">
+                                    <div class="p-3  text-sm">
+                                        <div class="flex justify-between">
+
+
+                                                    <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="size-4
+                            transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                stroke="none" d="M0 0h24v24H0z"
+                                                fill="none" /><path
+                                                d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                d="M16 3v4" /><path d="M8 3v4" /><path
+                                                d="M4 11h16" /><path d="M8 14v4" /><path
+                                                d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                        Tuesday, Sept 24, 2024</p>
+
+                                                        <p class="text-xs inline-flex gap-1 items-center text-dark-20">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="size-4
+                                transition-all duration-500 ease-in-out group-hover:text-dark-10"><path
+                                                    stroke="none" d="M0 0h24v24H0z"
+                                                    fill="none" /><path
+                                                    d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path
+                                                    d="M16 3v4" /><path d="M8 3v4" /><path
+                                                    d="M4 11h16" /><path d="M8 14v4" /><path
+                                                    d="M12 14v4" /><path d="M16 14v4" /></svg>
+                                                            10:00 - 4:00 PM</p>
+
+
+                                        </div>
+                                        <p class="text-green-10 mt-2 font-semibold text-lg">Form 3 Parents' Visiting Day</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="flex mt-2 gap-2">
+                        <div class="w-2/3 rounded-lg">
+
+                            <div class="bg-white rounded-lg">
+                                <div class="p-3 ">
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-green-10 text-xl font-semibold">My Tasks</p>
+                                        <div class="bg-grey-10 rounded-lg">
+                                            <div class="p-1 pr-2 flex justify-between text-sm gap-2 rounded-md text-dark-20">
+                                                <button class="bg-white text-green-10 rounded-md py-1.5 px-4">Today</button>
+                                                <button class="hover:bg-white hover:text-green-10 transition-all duration-300 rounded-md py-1.5 px-4">Completed</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="bg-green-50 flex gap-2 items-center text-white text-sm py-1 rounded-md px-3">
+                                                <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor"  class="size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4.929 4.929a10 10 0 1 1 14.141 14.141a10 10 0 0 1 -14.14 -14.14zm8.071 4.071a1 1 0 1 0 -2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0 -2h-2v-2z" /></svg>
+                                                Add Task</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex flex-col gap-2">
+                                <div class="bg-white text-sm border-l-4 rounded-lg border-orange-400">
+                                    <div class="p-3 flex  items-center">
+                                        <div class="border-r w-1/4 pr-5 text-dark-20 flex items-center gap-2">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="currentColor"  class="size-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-5 2.66a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 0 -2h-2.5v-4a1 1 0 0 0 -.883 -.993z" /></svg>
+                                            8:00 - 8:45 AM
+                                        </div>
+                                        <div class="text-green-50 pl-5 w-5/6 text-start">
+                                            <p>Hold a brief meeting with deputy principal, HODs and the bursar in my office.</p>
+                                        </div>
+                                        <div class="w-1/12">
+                                            <button class="border p-2 rounded-lg">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="size-5 text-dark-20"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-sm border-l-4 rounded-lg border-indigo-400">
+                                    <div class="p-3 flex  items-center">
+                                        <div class="border-r w-1/4 pr-5 text-dark-20 flex items-center gap-2">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="currentColor"  class="size-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-5 2.66a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 0 -2h-2.5v-4a1 1 0 0 0 -.883 -.993z" /></svg>
+                                            8:00 - 8:45 AM
+                                        </div>
+                                        <div class="text-green-50 pl-5 w-5/6 text-start">
+                                            <p>Hold a brief meeting with deputy principal, HODs and the bursar in my office.</p>
+                                        </div>
+                                        <div class="w-1/12">
+                                            <button class="border p-2 rounded-lg">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="size-5 text-dark-20"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-sm border-l-4 rounded-lg border-emerald-400">
+                                    <div class="p-3 flex  items-center">
+                                        <div class="border-r w-1/4 pr-5 text-dark-20 flex items-center gap-2">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="currentColor"  class="size-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-5 2.66a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 0 -2h-2.5v-4a1 1 0 0 0 -.883 -.993z" /></svg>
+                                            8:00 - 8:45 AM
+                                        </div>
+                                        <div class="text-green-50 pl-5 w-5/6 text-start">
+                                            <p>Hold a brief meeting with deputy principal, HODs and the bursar in my office.</p>
+                                        </div>
+                                        <div class="w-1/12">
+                                            <button class="border p-2 rounded-lg">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="size-5 text-dark-20"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white text-sm border-l-4 rounded-lg border-red-400">
+                                    <div class="p-3 flex  items-center">
+                                        <div class="border-r w-1/4 pr-5 text-dark-20 flex items-center gap-2">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 24 24"  fill="currentColor"  class="size-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-5 2.66a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 0 -2h-2.5v-4a1 1 0 0 0 -.883 -.993z" /></svg>
+                                            8:00 - 8:45 AM
+                                        </div>
+                                        <div class="text-green-50 pl-5 w-5/6 text-start">
+                                            <p>Hold a brief meeting with deputy principal, HODs and the bursar in my office.</p>
+                                        </div>
+                                        <div class="w-1/12">
+                                            <button class="border p-2 rounded-lg">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="size-5 text-dark-20"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 bg-white rounded-lg">
+                            <div class="p-5">
+                                <div class="flex">
+                                    <p class="text-green-10 font-semibold">Who's Away</p>
+                                </div>
+                                <hr class="mt-5 border-gray-100">
+                                <div class="mt-5 flex flex-col gap-2">
+                                    <div class="bg-grey-10 rounded-lg">
+                                        <div class="p-3 flex justify-between items-center">
+                                            <div class=" flex gap-3 items-center">
+                                                <span class="bg-white size-10 text-green-50 rounded-full flex items-center justify-center">
+                                                    NL
+                                                </span>
+                                                <div class="text-green-10 text-sm">
+                                                    <p>Nick Langat</p>
+                                                    <p class="text-dark-20 text-xs">English Literarure</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-sm text-dark-20">
+                                                <p>2G, 4B, 1G, 3B</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-grey-10 rounded-lg">
+                                        <div class="p-3 flex justify-between items-center">
+                                            <div class=" flex gap-3 items-center">
+                                                <span class="bg-white size-10 text-green-50 rounded-full flex items-center justify-center">
+                                                    NL
+                                                </span>
+                                                <div class="text-green-10 text-sm">
+                                                    <p>Nick Langat</p>
+                                                    <p class="text-dark-20 text-xs">English Literarure</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-sm text-dark-20">
+                                                <p>2G, 4B, 1G, 3B</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-grey-10 rounded-lg">
+                                        <div class="p-3 flex justify-between items-center">
+                                            <div class=" flex gap-3 items-center">
+                                                <span class="bg-white size-10 text-green-50 rounded-full flex items-center justify-center">
+                                                    NL
+                                                </span>
+                                                <div class="text-green-10 text-sm">
+                                                    <p>Nick Langat</p>
+                                                    <p class="text-dark-20 text-xs">English Literarure</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-sm text-dark-20">
+                                                <p>2G, 4B, 1G, 3B</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
                 </div>
-                <div v-if="!long"
-                    class="p-8 shadow text-center rounded-lg my-10 bg-white"
-                    v-for="i in 2">
-                    {{shortMsg}}
-                </div>
+
+
+
+
             </div>
         </div>
     </div>
